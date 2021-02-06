@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Autocalculator JS</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    </head>
+    <body>
+
+        <div class="columns">
+            <!-- Config options -->
+            <div class="column is-two-fifths">
+                <div class="box">
+                    <div class="columns">
+                        <div class="column is-half">
+                            <!-- Select model -->
+                            <div class="block ml-5 mt-4">
+                                <h5 class="subtitle is-5 has-background-dark has-text-white p-2">Model:</h5>
+                                    <!-- Model choose -->
+                                <table class="table is-hoverable">
+                                    <tr><th class="model_select">Polo</th><td>15000 eur</td></tr>
+                                    <tr><th class="model_select">Passat</th><td>23000 eur</td></tr>
+                                    <tr><th class="model_select">Touareg</th><td>35000 eur</td></tr>
+                                </table>
+                                <div class="select">
+                                    <form id="models">
+                                        <select id="model">
+                                            <option value="Polo">Polo</option>
+                                            <option value="Passat">Passat</option>
+                                            <option value="Touareg">Touareg</option>
+                                        </select>
+                                    </form>
+                                </div>                                
+                            </div>
+                            <!-- Model description --> 
+                            <div class="block ml-5">
+                                <p id="model_desc">Polo - is good econom sedan for people</p>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="column">
+                            <!-- Select color -->
+                            <div class="block ml-5 mt-4">
+                                <h5 class="subtitle is-5  has-background-dark has-text-white p-2">Color:</h5>
+                                <!-- Color choose -->
+                                <table class="table is-hoverable">
+                                    <tr><th class="color_select">White</th><td>base</td></tr>
+                                    <tr><th class="color_select">Brown</th><td>1000 eur</td></tr>
+                                    <tr><th class="color_select">Gray</th><td>500 eur</td></tr>
+                                    <tr><th class="color_select">Silver</th><td>700 eur</td></tr>
+                                    <tr><th class="color_select">Red</th><td>1300 eur</td></tr>
+                                </table>
+                                <div class="select">
+                                    <form id="colors">
+                                        <select id="color">
+                                            <option selected value="White">White</option>
+                                            <option value="Brown">Brown</option>
+                                            <option value="Gray">Gray</option>
+                                            <option value="Silver">Silver</option>
+                                            <option value="Red">Red</option>
+                                        </select>
+                                    </form>
+                                </div>
+                            </div>
+                            <!-- Color description -->
+                            <div class="block ml-5">
+                                <p  id="color_desc">Basic color. Additional payment is:</p><b id="color_price">0.00</b> eur
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Select complectation -->
+                    <hr>
+                    <div class="columns is-half">
+                        <div class="column">
+                            <div class="block ml-5 mt-4">
+                                <h5 class="subtitle is-5  has-background-dark has-text-white p-2">Complectation:</h5>
+                                    <!-- Complectation choose -->
+                                        <div class="control"> 
+                                            <form id="complectations"> 
+                                                <label class="radio">Econom
+                                                    <input type="radio" name="complectation" id="econom" value="Econom" checked class="ml-4 mr-4">
+                                                </label><br>
+                                                <label class="radio">Standart
+                                                    <input type="radio" name="complectation" id="standart" value="Standart" class="ml-3 mr-4"><b>500</b> eur
+                                                </label><br>
+                                                <label class="radio">Business
+                                                    <input type="radio" name="complectation" id="business" value="Business" class="ml-3 mr-4"><b>2900</b> eur
+                                                </label><br>
+                                                <label class="radio">Luxury
+                                                    <input type="radio" name="complectation" id="luxury" value="Luxury" class="ml-5 mr-4"><b>5700</b> eur
+                                                </label><br>
+                                                </form>
+                                        </div>
+                            </div>
+                        </div>
+                    <hr>
+                    <!-- Select engine -->
+                        <div class="column">
+                            <div class="block ml-5 mt-4">
+                                <h5 class="subtitle is-5  has-background-dark has-text-white p-2">Engine:</h5>
+                                    <!-- Engine choose -->
+                                    <div class="control"> 
+                                        <form id="engines">
+                                            <label class="radio">83 kW
+                                                <input type="radio" name="engine" id="83" value="83" class="ml-5" checked>
+                                            </label><br>
+                                            <label class="radio">150 kW
+                                                <input type="radio" name="engine" id="150" value="150" class="ml-4 mr-4"><b>350</b> eur
+                                            </label><br>
+                                            <label class="radio">210 kW
+                                                <input type="radio" name="engine" id="210" value="210" class="ml-4 mr-4"><b>1100</b> eur
+                                            </label><br>
+                                        </form> 
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <!-- Select wheels -->
+                    <div class="columns">
+                        <div class="column is-half">
+                            <div class="block ml-5 mt-4">
+                                <h5 class="subtitle is-5  has-background-dark has-text-white p-2">Wheels radius:</h5>
+                                    <!-- Wheels choose -->
+                                        <div class="control"> 
+                                            <form id="wheels_radius">
+                                                <label class="radio">16'
+                                                    <input type="radio" name="wheels" id="16" value="16" class="ml-4" checked>
+                                                </label><br>
+                                                <label class="radio">17'
+                                                    <input type="radio" name="wheels" id="17" value="17" class="ml-4 mr-4"><b>100</b> eur
+                                                </label><br>
+                                                <label class="radio">18'
+                                                    <input type="radio" name="wheels" id="18" value="18" class="ml-4 mr-4"><b>130</b> eur
+                                                </label><br>
+                                                <label class="radio">19'
+                                                    <input type="radio" name="wheels" id="19" value="19" class="ml-4 mr-4"><b>210</b> eur
+                                                </label><br>
+                                            </form> 
+                                        </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="block ml-5">
+                        <button class="button is-danger" id="clear_form">Clear form</button>
+                        <button class="button is-info" id="place_order">Place order</button>
+                    </div> -->
+                </div>
+            </div>
+            <!-- Config show -->
+            <div class="column">
+                <div class="box">
+                    <figure class="image is-300">
+                        <img src="images/vw_Polo_White.png" id="pic">
+                    </figure>
+                </div>
+
+                <div class="box"> 
+                    <h5 class="title is-5">Your configuration:</h5>
+                    <table class="table is-fullwidth is-hoverable">
+                    <thead>
+                    <tr>
+                        <th>Model</th>
+                        <th>Color</th>
+                        <th>Complectation</th>
+                        <th>Engine (kW)</th>
+                        <th>Wheels radius (inches')</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td id="model_show">Polo</td>
+                        <td id="color_show">White</td>
+                        <td id="complectation_show">Econom</td>
+                        <td id="engine_show">83</td>
+                        <td id="wheels_show">16</td>
+                    </tr>
+                    </tbody>
+                    </table>
+                <div class="content">  
+                    <div class="box has-background-primary has-text-centered">
+                            <span class="has-text-white">Total price:  <span class="title is-3 has-text-white" id="total_price">15000</span>  eur</span>
+                    </div>
+                    <div class="block">
+                        <button class="button is-danger" id="clear_form">Clear form</button>
+                        <button class="button is-info" id="place_order">Place order</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    <script src="script.js"></script>
+    </body>
+</html>

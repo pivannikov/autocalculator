@@ -133,9 +133,3 @@ function changeColor(model, selector) {
     }
 }
 
-// console.log(elements);
-
-
-
-// // localStorage.setItem("lastname", "Smith");
-// document.getElementById("result").innerHTML = localStorage.getItem("lastname");
